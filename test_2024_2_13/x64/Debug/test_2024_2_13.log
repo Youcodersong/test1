@@ -1,0 +1,5 @@
+﻿  Add.c
+  test6.c
+  正在生成代码...
+x64\Debug\Add.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+  test_2024_2_13.vcxproj -> D:\Microsoft下载\Visual Studio\项目\test_2024_2_13\x64\Debug\test_2024_2_13.exe
