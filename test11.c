@@ -5,8 +5,8 @@
 #define rate_min 0.15
 #define rate_mid  0.2
 #define rate_max  0.25
-#define  num1 300
-#define  num2 150
+#define  num1 300.0
+#define  num2 150.0
 int main()
 {
 	float sum = 0;
@@ -17,43 +17,43 @@ int main()
 	scanf("%f",&hours);
 	if (hours < 30)
 	{
-		sum = basic_salary * hours;
+		sum =(float)( basic_salary * hours);
 		rate = 0;
-		salary = sum - rate;
-		printf("×ÜÊÕÈëÊÇ%.3f£¬Ë°ÂÊÊÇ%.3f£¬¾»ÊÕÈëÊÇ%.3f", sum, rate, salary);
+		salary =(float)(sum - rate);
+		printf("æ€»æ”¶å…¥æ˜¯%.3fï¼Œç¨ç‡æ˜¯%.3fï¼Œå‡€æ”¶å…¥æ˜¯%.3f", sum, rate, salary);
 	}
 	else if (hours >= 30 && hours < 40)
 	{
 		if (sum - num1 > 0)
 		{
-			sum = basic_salary * hours;
-			rate = (sum - num1) * rate_mid + num1 * rate_min;
-			salary = sum - rate;
-			printf("×ÜÊÕÈëÊÇ%.3f£¬Ë°ÂÊÊÇ%.3f£¬¾»ÊÕÈëÊÇ%.3f", sum, rate, salary);
+			sum =(float)(basic_salary * hours);
+			rate = (float)((sum - num1) * rate_mid + num1 * rate_min);
+			salary =(float)(sum - rate);
+			printf("æ€»æ”¶å…¥æ˜¯%.3fï¼Œç¨ç‡æ˜¯%.3fï¼Œå‡€æ”¶å…¥æ˜¯%.3f", sum, rate, salary);
 		}
 		else if (sum - num1 <= 0)
 		{
-			sum = basic_salary * hours;
-			rate = num1 * rate_min;
-			salary = sum - rate;
-			printf("×ÜÊÕÈëÊÇ%.3f£¬Ë°ÂÊÊÇ%.3f£¬¾»ÊÕÈëÊÇ%.3f", sum, rate, salary);
+			sum =(float)(basic_salary * hours);
+			rate =(float)(num1 * rate_min);
+			salary = (float)(sum - rate);
+			printf("æ€»æ”¶å…¥æ˜¯%.3fï¼Œç¨ç‡æ˜¯%.3fï¼Œå‡€æ”¶å…¥æ˜¯%.3f", sum, rate, salary);
 		}
 	}
 	else if (hours > 40)
 	{
-		hours = (hours-40) * overtime;
-		sum = (40 + hours)*basic_salary;
+		hours =(float)((hours-40) * overtime);
+		sum = (float)((40 + hours)*basic_salary);
 		if (sum - num1 <= num2)
 		{
-			rate = num1 * rate_min + (sum - num1) * rate_mid;
-			salary = sum - rate;
-			printf("×ÜÊÕÈëÊÇ%.3f£¬Ë°ÂÊÊÇ%.3f£¬¾»ÊÕÈëÊÇ%.3f", sum, rate, salary);
+			rate = (float)(num1 * rate_min + (sum - num1) * rate_mid);
+			salary = (float)(sum - rate);
+			printf("æ€»æ”¶å…¥æ˜¯%.3fï¼Œç¨ç‡æ˜¯%.3fï¼Œå‡€æ”¶å…¥æ˜¯%.3f", sum, rate, salary);
 		}
 		else 
 		{
-			rate = num1 * rate_min + (sum - num1) * rate_mid + (sum - 450) * rate_max;
-			salary = sum - rate;
-			printf("×ÜÊÕÈëÊÇ%.3f£¬Ë°ÂÊÊÇ%.3f£¬¾»ÊÕÈëÊÇ%.3f", sum, rate, salary);
+			rate = (float)(num1 * rate_min + (sum - num1) * rate_mid + (sum - 450) * rate_max);
+			salary =(float)(sum - rate);
+			printf("æ€»æ”¶å…¥æ˜¯%.3fï¼Œç¨ç‡æ˜¯%.3fï¼Œå‡€æ”¶å…¥æ˜¯%.3f", sum, rate, salary);
 		}
 	}
 	return 0;
